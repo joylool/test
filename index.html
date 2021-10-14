@@ -1,0 +1,156 @@
+
+<html>
+<!-- Credits: crazyexploits 4 tha cursor & idea -->
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+
+<body>
+    <title>SirYeet.rip</title>
+
+    <div id="mainEnter" style="font-family: 'Prompt', sans-serif;">
+        <h1 id="brand1">siryeet.rip</h1>
+        <h5 id="startText" style="font-size: 18px;">press b to start</h5>
+    </div>
+</body>
+
+
+<audio id="loadSound" loop volume="0.5">
+    <source src="https://rbx.services/loadSound.mp3" type="audio/mpeg">
+</audio>
+
+<style>
+    body {
+        background-color: rgb(12, 12, 12);
+    }
+
+    html {
+        cursor: url(/assets/cursor.png), default;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-family: 'Prompt', sans-serif;
+        color: white;
+    }
+
+    #mainEnter {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-family: 'Chongo', sans-serif;
+    }
+
+    #startText {
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+
+    #brand1 {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: relative;
+    }
+</style>
+
+<script>
+    var trig = false;
+    window.onload = function () {
+        setTimeout(() => {
+            var tex = "press any key to begin";
+            async function rep() {
+                $("#startText").html('');
+                var trol = ""
+                for (var i = 0; i < tex.length; i++) {
+                    trol = trol + tex.substring(i, i + 1)
+
+
+                    $("#startText").html("> " + trol + " <");
+
+                    await sleep(35)
+                }
+
+                await sleep(1500);
+                if (trig) return;
+                rep();
+            }
+            rep();
+        }, 100)
+    }
+
+
+
+    function start() {
+        if (trig) return;
+            trig = true;
+            setTimeout(() => {
+            document.getElementById("loadSound").play();
+            }, 450)
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+
+                color: 0xff0000,
+                backgroundColor: 0xf0f0f
+            })
+
+            var wordArry = ["SirYeet#0001", "621820602650722316", "@SirYeet0001", "Scripter", "RLua/Lua, Javascript, HTML, CSS, Java, C#, C++, PHP, VB.NET, BATCH", "BloxCord: Ranking Service", "RoGuard: AntiExploit, AntiRaid", "RexHub: FF Exploits", "Zen: Game Crasher", "RoAuth: Intel"];
+            var onwor = 0;
+            async function slideshow() {
+                $("#startText").html('');
+                var tex = wordArry[onwor];
+                if (tex == null) { onwor = 0; tex = wordArry[onwor] }
+                onwor++;
+                var trol = ""
+                for (var i = 0; i < tex.length; i++) {
+                    trol = trol + tex.substring(i, i + 1)
+
+
+                    $("#startText").html(trol);
+
+                    await sleep(35)
+                }
+
+                await sleep(1500);
+                slideshow();
+            }
+            slideshow();
+
+    }
+
+    $("html").keypress(function (event) {
+        console.log(event.which)
+
+            start();
+        
+    })
+    $("html").click(() => {
+        start()
+    })
+
+    function sleep(ms) { return new Promise(e => setTimeout(e, ms)) };
+
+</script>
+
+</html>
